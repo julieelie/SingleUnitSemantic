@@ -1,4 +1,6 @@
-
+%% This script is following FindSemanticNeuronsFinal and calculate...
+    ...the Semantic Information for random matrices where only the columns...
+        ... have been shuffled to estimate the significance of SI for each unit
 resultsDirectory='/auto/k8/julie';
 %addpath(genpath('/Users/elie/Documents/MATLAB/tlab/trunk/src/'));
 addpath('/auto/k1/queued');

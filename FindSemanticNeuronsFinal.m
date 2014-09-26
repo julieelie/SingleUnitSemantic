@@ -1,4 +1,4 @@
-
+%% This script gather data from all single units and is followed by FindSemanticNeuronsFinalPredict.m
 resultsDirectory='/auto/k8/julie';
 %addpath(genpath('/Users/elie/Documents/MATLAB/tlab/trunk/src/'));
 addpath('/auto/k1/queued');

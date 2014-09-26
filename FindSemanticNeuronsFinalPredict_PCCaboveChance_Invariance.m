@@ -1,5 +1,6 @@
-% This script calculate for each unit and each category the invariance =
-% the entropy of each bloc in the bloc diagonal
+%% This script comes after FindSemanticNeuronsFinalPredict_PCCaboveChance.m
+...calculate for each unit and each category the invariance =
+...the entropy of each bloc in the bloc diagonal
 
 resultsDirectory='/auto/k8/julie';
 %addpath(genpath('/Users/elie/Documents/MATLAB/tlab/trunk/src/'));

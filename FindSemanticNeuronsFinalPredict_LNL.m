@@ -1,4 +1,4 @@
-
+%% This script is not used anymore, it was a tentative to estimate how linear or non-linear units were.
 % Directory to save data
 resultsDirectory='/auto/fdata/fet/julie/semanticProject';
 addpath(resultsDirectory);

@@ -1,3 +1,4 @@
+%% This script was the first one I worked on to gather data from all single units see now FindSemanticNeuronsFinal.m
 cd /auto/k6/julie/matfile
 resultsDirectory='/auto/k8/julie';
 %addpath(genpath('/Users/elie/Documents/MATLAB/tlab/trunk/src/'));

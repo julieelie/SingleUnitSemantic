@@ -1,6 +1,7 @@
-% This script extract the number of vocalizations per category for each
-% unit, calculate the mean spike rate per category for each unit, retrieve
-% the number of trials for each vocalization for each unit
+%% This script comes after FindSemanticNeuronsFinalPredict.m...
+...extracts the number of vocalizations per category for each...
+...unit, calculates the mean spike rate per category for each unit, retrieves
+...the number of trials for each vocalization for each unit
 
 resultsDirectory='/auto/k8/julie';
 %addpath(genpath('/Users/elie/Documents/MATLAB/tlab/trunk/src/'));

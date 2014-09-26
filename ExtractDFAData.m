@@ -1,3 +1,4 @@
+%% This script extract the results of the DFA on the spectrograms for semantic categorization for each set of vocalizations used at each neurophys site
 resultsDirectory='/auto/k8/julie';
 %Create some output variables
 NS=30;%estimation of the number of sites
