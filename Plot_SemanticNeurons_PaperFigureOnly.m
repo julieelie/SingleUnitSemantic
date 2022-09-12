@@ -2,9 +2,9 @@
 %load('/Users/elie/Documents/MATLAB/data/matfile/SemanticAnalysis_ShuffPredict_PCCAbCh_Invariance.mat', 'MI_perArea', 'SemanticIndex', 'R2A', 'GlobalR2A', 'Selectivity', 'Invariance', 'Conf', 'List_matfilepath', 'List_anat', 'ZONES', 'ZONES_List', 'SUBJ', 'Spike_shape', 'MeanSR', 'StimTypeCM','SUBJECTS')
 %load('/Users/elie/Documents/MATLAB/data/matfile/SemanticAnalysis_ShuffPredict_PCCAbCh_Invariance2.mat', 'MI_perArea', 'SemanticIndex', 'R2A', 'GlobalR2A', 'Selectivity', 'Invariance', 'Conf', 'List_matfilepath', 'List_anat', 'ZONES', 'ZONES_List', 'SUBJ', 'Spike_shape', 'MeanSR', 'StimTypeCM','SUBJECTS');
 %load('/Users/elie/Documents/MATLAB/data/matfile/SemanticAnalysis_ShuffPredict_PCCAbCh_Invarianceonly.mat', 'Invariance');
-load('/Users/elie/Documents/MATLAB/data/matfile/SemanticAnalysis_ShuffPredict_PCCAbCh_Invariance.mat', 'MI_perArea', 'SemanticIndex', 'R2A', 'GlobalR2A', 'Selectivity', 'Invariance', 'Conf', 'List_matfilepath', 'List_anat', 'ZONES', 'ZONES_List', 'SUBJ', 'Spike_shape', 'MeanSR', 'StimTypeCM','SUBJECTS');
+load('/Users/elie/Documents/CODE/data/matfile/SemanticAnalysis_ShuffPredict_PCCAbCh_Invariance3.mat', 'MI_perArea', 'SemanticIndex', 'R2A', 'GlobalR2A', 'Selectivity', 'Invariance', 'Conf', 'List_matfilepath', 'List_anat', 'ZONES', 'ZONES_List', 'SUBJ', 'Spike_shape', 'MeanSR', 'StimTypeCM','SUBJECTS');
 %FE=load('/Users/elie/Documents/MATLAB/data/matfile/SemanticAnalysis_ShuffPredict_LNL.mat'); %NO USE ANYMORE: results of the analysis of Linearity that predict the expected value of MI_cat based on the linear model that predict values of MI_cat for different level of perturbation of the acoustic correlation of vocalizations within the confusion matrix
-AS = load('/Users/elie/Documents/MATLAB/data/matfile/SemanticAnalysis_ShuffPredict_ASModels.mat'); %Results of the acoustic and semantic perturbations of confusion matrices
+AS = load('/Users/elie/Documents/CODE/data/matfile/SemanticAnalysis_ShuffPredict_ASModels.mat'); %Results of the acoustic and semantic perturbations of confusion matrices
 PCC_DFA=[52.32 90.96 42.12 41.5 41.04 67.64 82.92 68.97 58.64]./100;%according to email from frederic 03172014
 NU = length(MI_perArea.MI_tot);
 MU=find(Spike_shape==0);
@@ -487,7 +487,7 @@ PCC_SSUcell_se = std(PCC_SSUcell_inv)./sqrt(size(PCC_SSUcell_inv,1));
 % end
 % PCC_SScell_se_DFA = std(PCC_SScell_inv_DFA)./sqrt(size(PCC_SScell_inv_DFA,1));
 
-DFA=load('/Users/elie/Documents/MATLAB/data/matfile/DFAAcoustic.mat');
+DFA=load('/Users/elie/Documents/CODE/data/matfile/DFAAcoustic.mat');
 PCC_DFA_mean = mean(DFA.PCC_cat);
 PCC_DFA_se = std(DFA.PCC_cat)./sqrt(size(DFA.PCC_cat,1));
 
@@ -2399,5 +2399,19 @@ colorbar()
 colormap(GRAD4)
 axis([0 6 0 1])
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Variables for Neelabh Kumar (09/12/2022)
 
+NK_Data.PCC = PCC_inv(:,1:9);
+NK_Data.Sel = LRI(:,1:9);
+NK_Data.Inv = II(:,1:9);
+NK_Data.StimType = StimTypeCM(1:9);
+NK_Data.SemUnitIndices = SemCellPV;
+NK_Data.UnitName = cell(NU,1);
+for ss=1:NU
+    [~,UnitName,~]=fileparts(List_matfilepath{ss});
+    NK_Data.UnitName{ss} = UnitName(9:end);
+end
 
+save('/Users/elie/Documents/CODE/data/matfile/DataElieTheunissen_EJN2015_4Neelabh.mat', '-struct', 'NK_Data')
